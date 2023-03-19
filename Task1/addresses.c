@@ -55,20 +55,20 @@ int main(int argc, char **argv)
     /* task 1 b here */
     for (int i = 0; i < 3; i++)
     {
-        printf("- &iarray[%d]: %p\n", i, &iarray[i]);
-        printf("- &farray[%d]: %p\n", i, &farray[i]);
-        printf("- &darray[%d]: %p\n", i, &darray[i]);
-        printf("- &carray[%d]: %p\n", i, &carray[i]);
+        printf("- iarray[%d]: %p\n", i, &iarray[i]);
+        printf("- farray[%d]: %p\n", i, &farray[i]);
+        printf("- darray[%d]: %p\n", i, &darray[i]);
+        printf("- carray[%d]: %p\n", i, &carray[i]);
     }
 
-    printf("- &iarray[0]: %x\n", &iarray);
-    printf("- &iarray[1]: %x\n", &iarray + 1);
-    printf("- &farray[0]: %x\n", &farray);
-    printf("- &farray[1]: %x\n", &farray + 1);
-    printf("- &darray[0]: %x\n", &darray);
-    printf("- &darray[1]: %x\n", &darray + 1);
-    printf("- &carray[0]: %x\n", &carray);
-    printf("- &carray[1]: %x\n", &carray + 1);
+    printf("- iarray[0]: %x\n", (unsigned int)iarray);
+    printf("- iarray[1]: %x\n", (unsigned int)(iarray + 1));
+    printf("- farray[0]: %x\n", (unsigned int)farray);
+    printf("- farray[1]: %x\n", (unsigned int)(farray + 1));
+    printf("- darray[0]: %x\n", (unsigned int)darray);
+    printf("- darray[1]: %x\n", (unsigned int)(darray + 1));
+    printf("- carray[0]: %x\n", (unsigned int)carray);
+    printf("- carray[1]: %x\n", (unsigned int)(carray + 1));
 
     printf("Pointers and arrays (T1d):\n");
     int iarray2[] = {1, 2, 3};
@@ -80,19 +80,19 @@ int main(int argc, char **argv)
     carray2Ptr = carray2;
     for (int i = 0; i < 3; i++)
     {
-        printf("- &iarray2[%d]: %p\n", i, iarray2Ptr++);
-        printf("- &carray2[%d]: %p\n", i, carray2Ptr++);
+        printf("- &iarray2[%d]: %d\n", i, *(iarray2Ptr++));
+        printf("- &carray2[%d]: %c\n", i, *(carray2Ptr++));
     }
 
     int *p;
-    printf("- &p: %p\n", &p);
+    printf("- &p: %p\n", (void *)p);
 
     printf("Command line arg addresses (T1e):\n");
     /* task 1 e here */
 
     for (int i = 0; i < argc; i++)
     {
-        printf("- &argv[%d]: %p or %p\n", i, &argv[i], argv[i]);
+        printf("- argv[%d]'s address is %p and it's content is %s\n", i, &argv[i], argv[i]);
     }
 
     return 0;

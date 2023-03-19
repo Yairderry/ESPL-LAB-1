@@ -56,7 +56,10 @@ char decrypt(char c)
 {
   return 0x20 <= c && c <= 0x7e ? c - 1 : c;
 }
+
 char xprt(char c)
 {
-  return 0x20 <= c && c <= 0x7e ? c : '.';
+
+  printf(0x20 <= c && c <= 0x7e ? "%x\n" : ".\n", c);
+  return c;
 }
